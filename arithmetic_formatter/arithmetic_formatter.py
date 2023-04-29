@@ -41,17 +41,19 @@ def result_exp(expression:str) -> int:
 
 
 
-test_case_0 = '3 - 8'
+test_case_0 = '300 - 8550000'
 test_case_1 = ['3 + 855']
 test_case_2 = ['3 + 855', '3801 - 2', '45 + 43', '123 + 49']
 
-print(arithmetic_arranger(test_case_0, True))
+# print(arithmetic_arranger(test_case_0, True))
 
 
-def first_line(problems):
+def first_line(problems: list[int], separator=' ', spaces_count=4):
     res = ''
     for element in problems:
-        res += f'{element.split()[0]} '
+        slot = length_of_expression(element)
+        need_area = separator * spaces_count
+        res += f'{element.split()[0].rjust(slot)}{need_area}'
 
     return res
 
@@ -62,4 +64,9 @@ def line_formatter():
     pass
 
 
-# print(first_line(test_case_2))
+def length_of_expression(expression: str):
+    return len(max(expression.split())) + 2
+
+
+# print(length_of_expression(test_case_0))
+print(first_line(test_case_2))
