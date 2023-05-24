@@ -9,7 +9,6 @@ packages = [{include = "formatter_project"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 
-
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 pytest = "^7.3.1"
