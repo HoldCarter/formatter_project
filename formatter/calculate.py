@@ -4,11 +4,14 @@ import operator as op
 def add(first_operand, second_operand):
     return op.add(first_operand, second_operand)
 
+
 def sub(first_operand, second_operand):
     return op.sub(first_operand, second_operand)
 
+
 def mul(first_operand, second_operand):
     return op.mul(first_operand, second_operand)
+
 
 def div(first_operand, second_operand):
     if op.mod(first_operand, second_operand) == 0:
@@ -23,6 +26,7 @@ OPERATIONS = {
     "*": mul,
     "/": div
 }
+
 
 def result_expression(first_operand, operator, second_operand):
     num_1 = int(first_operand)

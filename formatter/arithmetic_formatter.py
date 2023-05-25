@@ -1,12 +1,12 @@
 from formatter.calculate import result_expression
 
+
 def length_of_expression(operand_1, operator, operand_2, result):
     return max(map(len, [operand_1, operator, operand_2, result])) + 2
 
 
 def expression_definder(expression: str):
     symbols = ["-", "+", "/", '*']
-    
     for symbol in symbols:
         if symbol in expression:
             operator = symbol
@@ -15,9 +15,8 @@ def expression_definder(expression: str):
     operand_2 = operand_2.strip()
     return operand_1, operator, operand_2
 
-    
-def arithmetic_merger(problems: list[str], need_result=True) -> str:
 
+def arithmetic_merger(problems: list[str], need_result=True) -> str:
     first_line = []
     second_line = []
     third_line = []
@@ -31,12 +30,14 @@ def arithmetic_merger(problems: list[str], need_result=True) -> str:
             result = result_expression(operand_1, operator, operand_2)
             slot = length_of_expression(operand_1, operator, operand_2, result)
             first_line.append(operand_1.rjust(slot))
-            second_line.append(f'{operator.ljust(2)}{operand_2.rjust(slot - 2)}')
+            second_line.append(f'{operator.ljust(2)}\
+                               {operand_2.rjust(slot - 2)}')
             third_line.append(f"{'-' * slot}")
             result_line.append(result.rjust(slot))
         except Exception:
-            return "Error: Numbers must only contain digits and operator must be '+', '-', '/' or '*'. And don't divide by zero"    
-
+            return "Error: Numbers must only contain digits and \
+operator must be '+', '-', '/' or '*'. \
+And don't divide by zero"
     if need_result:
         lines_combain = [first_line, second_line, third_line, result_line]
     else:
@@ -44,5 +45,4 @@ def arithmetic_merger(problems: list[str], need_result=True) -> str:
 
     for line in lines_combain:
         res_total.append(f'{space_bw_problem}'.join(line))
-
     return '\n'.join(res_total)
