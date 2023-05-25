@@ -4,7 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["holdcarter"]
 readme = "README.md"
-packages = [{include = "formatter_project"}]
+packages = [{include = "formatter"}]
+
+[tool.poetry.scripts]
+start-calculation = "formatter.scripts.runner:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,6 +15,7 @@ python = "^3.10"
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 pytest = "^7.3.1"
+prompt = "^0.4.1"
 
 [build-system]
 requires = ["poetry-core"]

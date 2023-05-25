@@ -5,4 +5,4 @@ build:
 package-install:
 	pip install --user --force-reinstall dist/*.whl
 lint:
-	poetry run flake8 arithmetic_formatter
+	poetry run flake8 formatter
