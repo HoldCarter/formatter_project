@@ -10,6 +10,7 @@ Training program for freeCodeCamp
 ```
 git clone git@github.com:timosii/arithmetic_formatter.git
 cd arithmetic_formatter
+make install
 make build
 make package-install
 ```
